@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>RegExp</title>
+	<link rel="stylesheet" href="/css/style.css">
+
+
+
+</head>
+
+<body class="body">
+
+	<div class="reveal">
+		<div class="slides">
+
+
+			<section class="main" data-transition="convex">
+				<h1 class="title">Regular Expressions in JS</h1>
+				<h2 class="name">Developer: Max Andreev</h2>
+			</section>
+
+
+			<section class="section1" data-transition="convex">
+				<h2 class="title">What Is a Regular Expression?</h2>
+
+			</section>
+
+
+			<section class="section2" data-transition="convex">
+				<h2 class="title">Creating a regular expression</h2>
+
+				<img class="creation" src="/assets/creation.png">
+
+			</section>
+
+
+			<section class="section3" data-transition="convex">
+				<section>
+					<h2 class="title">Simple example:</h2>
+
+					<img class="simple-example" src="/assets/simple-example.png">
+				</section>
+				<section>
+
+					<h2 class="title">Result</h2>
+					<img class="simple-example-result" src="/assets/simple-example-result.png">
+				</section>
+				<section>
+					<h2 class="title">Let's change</h2>
+					<img class="simple-example-fake" src="/assets/simple-example-fake.png">
+				</section>
+				<section>
+					<h2 class="title">Result</h2>
+					<p class="simple-example-fake-result">null</p>
+				</section>
+			</section>
+
+
+
+			<section class="section5" data-transition="convex">
+
+				<h2 class="title">Advanced search with flags</h2>
+
+				<table class="table-flags">
+					<tr>
+						<th> Flag </th>
+						<th> Description </th>
+					</tr>
+					<tr>
+						<td> g </td>
+						<td> Global search </td>
+					</tr>
+					<tr>
+						<td> i </td>
+						<td> Case-insensitive search </td>
+					</tr>
+					<tr>
+						<td> m </td>
+						<td> Multi-line search </td>
+					</tr>
+					<tr>
+						<td> y </td>
+						<td> Searches starting with the character that is at the position of the lastindex property of the
+							current regular expression. </td>
+					</tr>
+				</table>
+			</section>
+
+
+			<section class="section6" data-transition="convex">
+				<section>
+					<h2 class="title">How we can use flags?</h2>
+				</section>
+				<section>
+					<img class="flag-g" src="/assets/flag-g.png">
+					<h2 class="title">Result</h2>
+					<img class="flag-g-result" src="/assets/flag-g-result.png">
+				</section>
+				<section>
+					<h2 class="title">Use Array.from</h2>
+					<img class="flag-g-arrayfrom" src="/assets/flag-g-arrayfrom.png">
+				</section>
+				<section>
+					<h2 class="title">Result</h2>
+					<img class="flag-g-arrayfrom-result" src="/assets/flag-g-arrayfrom-result.png">
+				</section>
+				<section>
+					<img class="flag-g" src="/assets/flag-gi.png">
+					<h2 class="title">Result</h2>
+					<img class="flag-g-result" src="/assets/flag-gi-result.png" height="400px">
+				</section>
+				<section>
+					<img class="flag-g" src="/assets/flag-m.png">
+
+				</section>
+				<section>
+					<img class="flag-g" src="/assets/flag-iy.png">
+
+				</section>
+				
+			</section>
+
+
+			<section class="section7" data-transition="convex">
+
+				<section>
+
+					<h2 class="title">What are character classes?</h2>
+					<table class="table-characters">
+						<tr>
+							<th> symbol </th>
+							<th> equivalent </th>
+							<th> compliance </th>
+						</tr>
+						<tr>
+							<td> \ </td>
+							<td> </td>
+							<td> For characters normally treated literally, means that the next character is special and should
+								not
+								be interpreted literally.For characters usually treated in a special way means that the next
+								character is not special and must be interpreted literally. </td>
+						</tr>
+						<tr>
+							<td> . </td>
+							<td> [^\n] </td>
+							<td> Metasymbol (if you need to find exactly the point then we escape with a slash: /\./) </td>
+						</tr>
+						<tr>
+							<td> \d </td>
+							<td> [0-9] </td>
+							<td> Digital symbol </td>
+						</tr>
+						<tr>
+							<td> \D </td>
+							<td> [^0-9] </td>
+							<td> Non-digital symbol </td>
+						</tr>
+						<tr>
+							<td> \w </td>
+							<td> [A-Za-z0-9_] </td>
+							<td> Alphanumeric character or underscore </td>
+						</tr>
+						<tr>
+							<td> \W </td>
+							<td> [^A-Za-z0-9_] </td>
+							<td> Any character other than an alphanumeric character or underscore </td>
+						</tr>
+						<tr>
+							<td> \s </td>
+							<td> [\f\n\r\t\v] </td>
+							<td> Whitespace symbol </td>
+						</tr>
+						<tr>
+							<td> \S </td>
+							<td> [^\f\n\r\t\v] </td>
+							<td> Non-whitespace symbol </td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+
+					<img class="flag-g" src="/assets/sets.png">
+
+				</section>
+
+
+			</section>
+
+			<section class="section8" data-transition="convex">
+				<section>
+					<h2 class="title">Anchors:</h2>
+					<table class="table-anchors">
+						<tr>
+							<th> Anchor </th>
+							<th> Position </th>
+						</tr>
+						<tr>
+							<td> ^ </td>
+							<td> Beginning of the text </td>
+						</tr>
+						<tr>
+							<td> $ </td>
+							<td> End of the text </td>
+						</tr>
+						<tr>
+							<td> \B </td>
+							<td> Not a word boundary(inside the word) </td>
+						</tr>
+						<tr>
+							<td> \b </td>
+							<td> A word boundary </td>
+						</tr>
+
+					</table>
+				</section>
+				<section>
+					<img class="flag-g" src="/assets/anchors-1.png">
+				</section>
+
+
+			</section>
+
+			<section class="section9" data-transition="convex">
+				<section>
+					<h2 class="title">Quantifiers:</h2>
+
+					<table class="table-quantifiers">
+						<tr>
+							<th> Quantifier </th>
+							<th> Value </th>
+						</tr>
+						<tr>
+							<td> {n} </td>
+							<td> Repeat n times </td>
+						</tr>
+						<tr>
+							<td> {n,m} </td>
+							<td> Repeat from n to m times </td>
+						</tr>
+						<tr>
+							<td> {n,} </td>
+							<td> Repeat from n to ∞ times </td>
+						</tr>
+
+						<tr>
+							<td> * </td>
+							<td> Matches the preceding element x zero or more times </td>
+						</tr>
+						<tr>
+							<td> + </td>
+							<td> Matches the preceding element x one or more times </td>
+						</tr>
+
+
+					</table>
+				</section>
+				<section>
+					<img class="flag-g" src="/assets/quantifiers.png">
+				</section>
+				<section>
+					<img class="flag-g" src="/assets/quantifiers-lazy.png">
+				</section>
+
+			</section>
+
+			<section class="section10" data-transition="convex">
+
+				<h2 class="title">RegExp methods:</h2>
+
+				<table class="table-methods">
+					<tr>
+						<th> Method </th>
+						<th> Value </th>
+					</tr>
+					<tr>
+						<td> regexp.exec(str) </td>
+						<td> The exec() method searches for a regular expression match on the specified string. Returns
+							array with results or null. </td>
+					</tr>
+					<tr>
+					<tr>
+						<td> str.match([regexp]) </td>
+						<td> The str.match(regexp) method looks for matches with regexp in the string str
+						</td>
+					</tr>
+					<td> regexp.test(str) </td>
+					<td> The test() method searches for a regular expression match to the specified string. Returns
+						true or false. </td>
+					</tr>
+					<tr>
+						<td> str.search([regexp]) </td>
+						<td> The search() method searches for a match between a regular expression and this String object.
+						</td>
+					</tr>
+					<tr>
+						<td> str.split(regexp|substr, limit) </td>
+						<td> Splits a string into an array by delimiter-regexp regexp or substring substr
+						</td>
+					</tr>
+					<tr>
+						<td> str.replace(regexp|substr, newSubStr|function[, flags]) </td>
+						<td> The replace() method returns a new string with some or all of the pattern mappings
+							replaced with a substitute </td>
+					</tr>
+				</table>
+			</section>
+
+
+			<section id="sources" data-transition="convex" style="display: flex;">
+				<h2 class="all-sources">Sources:</h2>
+				<a class="source" href="https://www.w3schools.com/js/js_regexp.asp">www.w3schools.com</a>
+				<a class="source"
+					href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp">developer.mozilla.org</a>
+				<a class="source"
+					href="https://www.youtube.com/watch?v=pSdXUgOLpwo">https://www.youtube.com/user/loftblog</a>
+				<a class="source" href="https://learn.javascript.ru/regular-expressions">https://learn.javascript.ru/</a>
+				<a class="source"
+					href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5_%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F#%D0%9E%D0%B1%D1%8B%D1%87%D0%BD%D1%8B%D0%B5_%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D1%8B_(%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D0%BB%D1%8B)_%D0%B8_%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D1%8B_(%D0%BC%D0%B5%D1%82%D0%B0%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D1%8B)">https://ru.wikipedia.org/</a>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="/js/reveal.js"></script>
+	<script src="/main.js"></script>
+	<script>
+		Reveal.initialize();
+	</script>
+
+</body>
+
+</html>
